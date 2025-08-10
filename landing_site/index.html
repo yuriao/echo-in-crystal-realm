@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Echoes of the Crystal Realm</title>
+  <style>
+    :root{
+      /* palette from your app screenshot */
+      --bg:#1b1c30;      /* deep indigo */
+      --card:#2d2d45;    /* slate card */
+      --text:#e6e6f6;    /* high-contrast text */
+      --muted:#b2b6d3;   /* secondary text */
+      --purple:#8858f8;  /* Elara */
+      --green:#18b888;   /* Bramble */
+      --orange:#f89808;  /* Kael */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(136,88,248,.18), transparent 70%),
+        radial-gradient(900px 500px at 100% 100%, rgba(24,184,136,.18), transparent 60%),
+        linear-gradient(180deg, var(--card) 0%, var(--bg) 40%, var(--bg) 100%);
+    }
+    .wrap{
+      min-height:100dvh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 24px;
+    }
+    .grid{
+      width:min(1100px, 100%);
+      display:grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap:40px;
+    }
+    @media (max-width:900px){
+      .grid{ grid-template-columns: 1fr; }
+      .right{ order:2 }
+      .left{ order:1; text-align:center }
+    }
+
+    /* left */
+    .title{
+      font-size:clamp(32px, 5vw, 56px);
+      line-height:1.05;
+      margin:0 0 16px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:clamp(16px, 2.2vw, 18px);
+      margin:0;
+    }
+
+    /* right */
+    .panel{
+      background-color: color-mix(in oklab, var(--card) 92%, white 0%);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:20px;
+      padding:20px;
+      backdrop-filter: blur(6px);
+    }
+    .crystal{
+      display:block;
+      margin:0 auto 18px;
+      width:min(320px, 100%);
+      filter: drop-shadow(0 16px 40px rgba(136,88,248,.28));
+    }
+
+    .features{ display:grid; gap:14px }
+    .feature{
+      border-left:4px solid transparent;
+      padding:14px 16px;
+      border-radius:12px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .feature h3{
+      margin:0 0 6px;
+      font-size:18px;
+      font-weight:700;
+    }
+    .feature p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.4;
+      font-size:15px;
+    }
+    .elara   { border-left-color: var(--purple); }
+    .bramble { border-left-color: var(--green); }
+    .kael    { border-left-color: var(--orange); }
+
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      padding:6px 10px;
+      border-radius:999px;
+      margin-top:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <!-- LEFT: title -->
+      <div class="left">
+        <h1 class="title">Echoes of the Crystal Realm</h1>
+        <p class="lead">A chat‑first adventure guided by three distinct AI companions.</p>
+      </div>
+
+      <!-- RIGHT: crystal image + companion features -->
+      <div class="right">
+        <div class="panel">
+          <!-- inline SVG crystal (gradient matches theme) -->
+          <svg class="crystal" viewBox="0 0 300 300" role="img" aria-label="Crystal">
+            <defs>
+              <linearGradient id="cr-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"  stop-color="#8858f8"/>
+                <stop offset="55%" stop-color="#18b888"/>
+                <stop offset="100%" stop-color="#f89808"/>
+              </linearGradient>
+            </defs>
+            <!-- crystal base -->
+            <polygon points="150,12 210,70 238,150 210,230 150,288 90,230 62,150 90,70"
+                     fill="url(#cr-grad)" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+            <!-- facets -->
+            <polygon points="150,12 210,70 150,120 90,70" fill="rgba(0,0,0,.10)"/>
+            <polygon points="90,70 150,120 120,200 62,150" fill="rgba(0,0,0,.10)"/>
+            <polygon points="210,70 238,150 180,200 150,120" fill="rgba(255,255,255,.07)"/>
+            <polygon points="120,200 150,288 90,230" fill="rgba(0,0,0,.12)"/>
+            <polygon points="180,200 210,230 150,288" fill="rgba(255,255,255,.06)"/>
+            <circle cx="150" cy="150" r="92" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+          </svg>
+
+          <div class="features">
+            <div class="feature elara">
+              <h3 style="color:var(--purple)">Elara — Sage of the Ethereal Winds</h3>
+              <p>Wise guidance and foresight. Keeps your path clear and choices strategic.</p>
+              <span class="badge">Advisor</span>
+            </div>
+
+            <div class="feature bramble">
+              <h3 style="color:var(--green)">Bramble — Guardian of the Living Wood</h3>
+              <p>Playful energy and exploration nudges. Finds hidden paths and nature‑bound clues.</p>
+              <span class="badge">Explorer</span>
+            </div>
+
+            <div class="feature kael">
+              <h3 style="color:var(--orange)">Kael — Keeper of Ancient Runes</h3>
+              <p>Lore master and puzzle hints. Deciphers runes and unlocks deeper story threads.</p>
+              <span class="badge">Scholar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
