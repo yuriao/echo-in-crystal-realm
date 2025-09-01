@@ -89,80 +89,26 @@
       }
 
       /* right */
-      .panel {
-        background-color: color-mix(in oklab, var(--card) 92%, white 0%);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        padding: 20px;
-        backdrop-filter: blur(6px);
-        display: flex;
-        gap: 20px;
-        align-items: center;
-      }
-      .crystal {
+      .home-icon {
+        width: min(400px, 100%);
+        max-height: 80vh;
+        height: auto;
         display: block;
-        margin: 0;
-        width: min(320px, 100%);
-        filter: drop-shadow(0 16px 40px rgba(136, 88, 248, 0.28));
-        flex-shrink: 0;
-      }
-
-      .features {
-        display: grid;
-        gap: 14px;
-      }
-      .feature {
-        border-left: 4px solid transparent;
-        padding: 14px 16px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-      }
-      .feature h3 {
-        margin: 0 0 6px;
-        font-size: 18px;
-        font-weight: 700;
-      }
-      .feature p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.4;
-        font-size: 15px;
-      }
-      .elara {
-        border-left-color: var(--purple);
-      }
-      .bramble {
-        border-left-color: var(--green);
-      }
-      .kael {
-        border-left-color: var(--orange);
-      }
-
-      .badge {
-        display: inline-block;
-        font-size: 12px;
-        color: var(--muted);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 6px 10px;
-        border-radius: 999px;
-        margin-top: 10px;
-      }
-
-      @media (max-width: 700px) {
-        .panel {
-          flex-direction: column;
-        }
-        .crystal {
-          margin: 0 auto 18px;
-        }
+        margin: 0 auto;
       }
     </style>
   </head>
   <body>
     <header style="text-align: right; padding: 20px">
-      <a href="privacy.html" style="color: var(--muted); text-decoration: none"
+      <a
+        href="privacy.html"
+        style="color: var(--muted); text-decoration: none; margin-right: 20px"
         >Privacy Policy</a
+      >
+      <a
+        href="delete-account.html"
+        style="color: var(--muted); text-decoration: none"
+        >How to delete account</a
       >
     </header>
     <div class="wrap">
@@ -175,108 +121,15 @@
           </p>
         </div>
 
-        <!-- RIGHT: crystal image + companion features -->
+        <!-- RIGHT: site icon -->
         <div class="right">
-          <div class="panel">
-            <!-- inline SVG crystal (gradient matches theme) -->
-            <svg
-              class="crystal"
-              viewBox="0 0 300 300"
-              role="img"
-              aria-label="Crystal"
-            >
-              <defs>
-                <linearGradient
-                  id="cr-grad"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stop-color="#8858f8" />
-                  <stop offset="55%" stop-color="#18b888" />
-                  <stop offset="100%" stop-color="#f89808" />
-                </linearGradient>
-              </defs>
-              <!-- crystal base -->
-              <polygon
-                points="150,12 210,70 238,150 210,230 150,288 90,230 62,150 90,70"
-                fill="url(#cr-grad)"
-                stroke="rgba(255,255,255,.35)"
-                stroke-width="2"
-              />
-              <!-- facets -->
-              <polygon
-                points="150,12 210,70 150,120 90,70"
-                fill="rgba(0,0,0,.10)"
-              />
-              <polygon
-                points="90,70 150,120 120,200 62,150"
-                fill="rgba(0,0,0,.10)"
-              />
-              <polygon
-                points="210,70 238,150 180,200 150,120"
-                fill="rgba(255,255,255,.07)"
-              />
-              <polygon points="120,200 150,288 90,230" fill="rgba(0,0,0,.12)" />
-              <polygon
-                points="180,200 210,230 150,288"
-                fill="rgba(255,255,255,.06)"
-              />
-              <circle
-                cx="150"
-                cy="150"
-                r="92"
-                fill="none"
-                stroke="rgba(255,255,255,.08)"
-                stroke-width="2"
-              />
-            </svg>
-
-            <div class="features">
-              <div class="feature elara">
-                <h3 style="color: var(--purple)">
-                  Elara — Sage of the Ethereal Winds
-                </h3>
-                <p>
-                  Wise guidance and foresight. Keeps your path clear and choices
-                  strategic.
-                </p>
-                <span class="badge">Advisor</span>
-              </div>
-
-              <div class="feature bramble">
-                <h3 style="color: var(--green)">
-                  Bramble — Guardian of the Living Wood
-                </h3>
-                <p>
-                  Playful energy and exploration nudges. Finds hidden paths and
-                  nature‑bound clues.
-                </p>
-                <span class="badge">Explorer</span>
-              </div>
-
-              <div class="feature kael">
-                <h3 style="color: var(--orange)">
-                  Kael — Keeper of Ancient Runes
-                </h3>
-                <p>
-                  Lore master and puzzle hints. Deciphers runes and unlocks
-                  deeper story threads.
-                </p>
-                <span class="badge">Scholar</span>
-              </div>
-            </div>
-          </div>
+          <img
+            src="images/icon.png"
+            alt="Echoes of the Crystal Realm icon"
+            class="home-icon"
+          />
         </div>
       </div>
     </div>
-    <footer style="text-align: center; padding: 20px 0">
-      <a
-        href="delete-account.html"
-        style="color: var(--muted); text-decoration: none"
-        >How to delete account</a
-      >
-    </footer>
   </body>
 </html>
